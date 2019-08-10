@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Incognito Shorcut</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        height: 220px;
+        width: 300px;
+        background-color: #434c5f;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-rows: repeat(4, auto);
+        grid-gap: 10px;
+      }
+
+      #title,
+      #subtitle,
+      #held,
+      #set_button {
+        color: #d8d8d8;
+        font-family: "Nunito", sans-serif;
+        justify-self: center;
+        text-align: center;
+      }
+
+      #title {
+        font-size: 20pt;
+      }
+
+      #set_button {
+        background-color: #80a0c2;
+        color: #3b4253;
+        width: 70px;
+        height: 30px;
+        font-size: 14pt;
+        box-shadow: 0 3px 0 0 #11111125;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      #set_button:active {
+        transform: translateY(3px);
+        box-shadow: none;
+      }
+
+      #held {
+        background-color: #2e3440;
+        width: 80%;
+        line-height: 30px;
+        font-size: 12pt;
+        border-radius: 10px;
+        box-shadow: inset 0 3px 0 0 #11111125;
+        border: none;
+      }
+      #held::placeholder {
+        color: #d8d8d8;
+        opacity: 0.5;
+      }
+      #held:focus,
+      #set_button:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <span id="title">set a custom shorcut</span>
+    <span id="subtitle"></span>
+    <input type="text" id="held" placeholder="click to capture" readonly />
+    <button id="set_button">set</button>
+  </body>
+  <script src="popup.js"></script>
+</html>
